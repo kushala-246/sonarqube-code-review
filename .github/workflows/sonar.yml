@@ -20,4 +20,5 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v2
         env:
           SONAR_TOKEN: ${{ secrets.sqp_aa88306c2edb30a0755916d722bb438ed3f32eeb }}
-          SONAR_HOST_URL:  http://localhost:9000
+          SONAR_HOST_URL: https://sonarcloud.io
+
