@@ -19,5 +19,5 @@ jobs:
       - name: Run Sonar Scan
         uses: SonarSource/sonarqube-scan-action@v2
         env:
-          SONAR_TOKEN: ${{ secrets.sqa_b98e1f64578d7a8a3ecac24dbebd80a7b84ea7b8 }}
+          SONAR_TOKEN: ${{ secrets.sqp_aa88306c2edb30a0755916d722bb438ed3f32eeb }}
           SONAR_HOST_URL:  http://localhost:9000
