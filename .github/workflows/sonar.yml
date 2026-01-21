@@ -24,7 +24,8 @@ jobs:
 
     - name: Install Ant
       run: sudo apt-get update && sudo apt-get install -y ant
-
+      - name: List files in repo root
+       run: ls -l
     # build.xml is inside Windchill/
     - name: Build using Ant
       run: ant clean compile
