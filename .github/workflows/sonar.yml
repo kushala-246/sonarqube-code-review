@@ -1,9 +1,7 @@
-name: SonarQube Analysis
+name: sonar
 
 on:
   push:
-    branches: [ main, develop ]
-  pull_request:
     branches: [ main ]
 
 jobs:
@@ -13,23 +11,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-
-    - name: Set up Java (Windchill compatible)
-      uses: actions/setup-java@v4
-      with:
-        distribution: temurin
-        java-version: 17
-
-    - name: Install Ant
-      run: sudo apt-get update && sudo apt-get install -y ant
-      - name: List files in repo root
-       run: ls -l
-    # build.xml is inside Windchill/
-    - name: Build using Ant
-      run: ant clean compile
-      working-directory: Windchill
 
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@v2
@@ -39,8 +20,9 @@ jobs:
       with:
         args: >
           -Dsonar.projectKey=sonar-java-app
-          -Dsonar.sources=Windchill/src
-          -Dsonar.java.binaries=Windchill/build
+          -Dsonar.sources=C:\sonar-test\sonar-test\src\main\java\ext\ibm\validators
+
+     
 
 
 
