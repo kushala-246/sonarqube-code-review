@@ -1,28 +1,49 @@
 name: Windchill SonarQube Scan
+
 on:
   push:
     branches: [ "main", "develop" ]
+
 jobs:
   sonar:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Set up Java
+
+    - name: Set up Java (Windchill compatible)
       uses: actions/setup-java@v4
       with:
         distribution: temurin
-        java-version: 11   # Windchill compatible
+        java-version: 11
+
     - name: Install Ant
-      run: sudo apt-get install -y ant
-    - name: Download Maven dependencies
-      run: mvn dependency:copy-dependencies -DoutputDirectory=lib
+      run: sudo apt-get update && sudo apt-get install -y ant
+
     - name: Build using Ant
       run: ant clean compile
+
+   
+    - name: Install SonarScanner
+      run: |
+        wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+        unzip sonar-scanner-cli-5.0.1.3006-linux.zip
+        echo "$PWD/sonar-scanner-5.0.1.3006-linux/bin" >> $GITHUB_PATH
+
+  
     - name: SonarQube Scan
-      run: sonar-scanner
       env:
         SONAR_TOKEN: ${{ secrets.sqp_aa88306c2edb30a0755916d722bb438ed3f32eeb }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      run: |
+        sonar-scanner \
+          -Dsonar.projectKey=windchill-project \
+          -Dsonar.projectName=Windchill_Project \
+          -Dsonar.sources=src \
+          -Dsonar.java.binaries=build \
+          -Dsonar.host.url=$SONAR_HOST_URL \
+          -Dsonar.login=$SONAR_TOKEN
 
+     
  
