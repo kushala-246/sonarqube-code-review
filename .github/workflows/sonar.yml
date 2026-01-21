@@ -38,12 +38,11 @@ jobs:
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
       run: |
         sonar-scanner \
-          -Dsonar.projectKey=windchill-project \
-          -Dsonar.projectName=Windchill_Project \
+          -Dsonar.projectKey=sonar-java-app
           -Dsonar.sources=src \
           -Dsonar.java.binaries=build \
-          -Dsonar.host.url=$SONAR_HOST_URL \
-          -Dsonar.login=$SONAR_TOKEN
+          -Dsonar.host.url=$http://localhost:9000
+          -Dsonar.login=$sqa_b98e1f64578d7a8a3ecac24dbebd80a7b84ea7b8
 
      
  
