@@ -15,7 +15,7 @@
 
         <!-- SonarQube Properties -->
         <sonar.projectKey>com.ibm:sonar-java-app</sonar.projectKey>
-        <sonar.projectName>Sonar Java App</sonar.projectName>
+        <sonar.projectName>sonarqube-code-review</sonar.projectName>
         <sonar.host.url>http://localhost:9000</sonar.host.url>
     </properties>
 
@@ -57,3 +57,4 @@
     </build>
 
 </project>
+
