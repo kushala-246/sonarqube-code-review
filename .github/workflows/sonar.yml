@@ -5,8 +5,10 @@ on:
     branches: [ main ]
 
 jobs:
-  sonarqube:
-    runs-on: ubuntu-latest
+ build:
+    name: build and Analyze the sonar
+    runs-on: self-hosted
+    
 
     steps:
     - name: Checkout code
@@ -16,7 +18,7 @@ jobs:
       uses: SonarSource/sonarqube-scan-action@v2
       env:
         SONAR_TOKEN: sqp_aa88306c2edb30a0755916d722bb438ed3f32eeb
-        SONAR_HOST_URL: https://sonarcloud.io
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
 
       with:
