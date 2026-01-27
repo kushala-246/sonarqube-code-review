@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
 
       - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@v2
+        uses: sonarsource/sonarcloud-github-action@ce33f6358087729d1861075605109ce7b03a18fd
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
