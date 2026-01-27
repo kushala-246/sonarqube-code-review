@@ -15,6 +15,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+
+      - name: Build with Maven
+        run: mvn clean install -DskipTests
+
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@bbb169dca99d4930e2f5f5bfee0d9ccb2eb0e785
         env:
