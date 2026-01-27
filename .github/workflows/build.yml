@@ -1,17 +1,17 @@
-name: SonarCloud Scan
+name: Java SonarCloud CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    types: [opened, synchronize, reopened]
 
 jobs:
-  sonarcloud:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -21,8 +21,9 @@ jobs:
           java-version: 17
           distribution: temurin
 
-      - name: Build with Maven
+      - name: Build project
         run: mvn clean install -DskipTests
+mvn clean install -DskipTests
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@bbb169dca99d4930e2f5f5bfee0d9ccb2eb0e785
