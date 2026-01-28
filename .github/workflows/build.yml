@@ -44,3 +44,4 @@ jobs:
             -Dsonar.projectKey=kushala-246_sonarqube-code-review
             -Dsonar.organization=kushala-246
             -Dsonar.sources=.
+            -Dsonar.java.binaries=target/classes
