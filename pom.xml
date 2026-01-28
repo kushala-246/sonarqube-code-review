@@ -13,10 +13,12 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
-        <!-- SonarQube Properties -->
-        <sonar.projectKey>com.ibm:sonar-java-app</sonar.projectKey>
+        <junit.jupiter.version>5.10.1</junit.jupiter.version>
+
+        <!-- SonarCloud -->
+        <sonar.projectKey>kushala-246_sonarqube-code-review</sonar.projectKey>
         <sonar.projectName>sonarqube-code-review</sonar.projectName>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.organization>kushala-246</sonar.organization>
     </properties>
 
     <dependencies>
@@ -25,6 +27,14 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
             <version>2.19.0</version>
+        </dependency>
+
+        <!-- JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -35,17 +45,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                </configuration>
             </plugin>
 
-            <!-- SonarQube Maven Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.10.0.2594</version>
             </plugin>
         </plugins>
     </build>
