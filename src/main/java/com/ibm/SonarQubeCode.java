@@ -1,3 +1,5 @@
+package com.ibm;
+
 public class SonarQubeCode {
     public int add(int a, int b) {
         return a + b;

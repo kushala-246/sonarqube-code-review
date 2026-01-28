@@ -16,7 +16,7 @@
         <!-- SonarQube Properties -->
         <sonar.projectKey>com.ibm:sonar-java-app</sonar.projectKey>
         <sonar.projectName>sonarqube-code-review</sonar.projectName>
-        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencies>
