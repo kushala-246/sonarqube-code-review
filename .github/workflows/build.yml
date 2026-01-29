@@ -22,21 +22,17 @@ jobs:
           java-version: 11
           distribution: temurin
 
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@e44258bd19e3f1a9c29869cb6a2c83f217db38b5
+      - name: Build and analyze with SonarCloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=kushala-246_sonarqube-code-review
-            -Dsonar.organization=kushala-246
-            -Dsonar.sources=src/main/java
-            -Dsonar.tests=src/test/java
-            -Dsonar.java.binaries=target/classes
-            -Dsonar.test.inclusions=src/test/java/**/*.java
-            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
-            -Dsonar.exclusions=target/**,**/generated/**
-      
+        run: mvn clean verify sonar:sonar \
+          -Dsonar.projectKey=kushala-246_sonarqube-code-review \
+          -Dsonar.organization=kushala-246 \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+          -Dsonar.pullrequest.key=${{ github.event.pull_request.number }} \
+          -Dsonar.pullrequest.branch=${{ github.head_ref }} \
+          -Dsonar.pullrequest.base=${{ github.base_ref }}
 
 
 
