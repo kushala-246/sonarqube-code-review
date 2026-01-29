@@ -65,18 +65,18 @@
                 <version>3.2.5</version>
             </plugin>
 
-            <plugin>
+           <!-- <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.14</version>
                 <executions>
-                    <!-- prepare agent for tests -->
+                    &lt;!&ndash; prepare agent for tests &ndash;&gt;
                     <execution>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-                    <!-- generate report after tests -->
+                    &lt;!&ndash; generate report after tests &ndash;&gt;
                     <execution>
                         <id>report</id>
                         <phase>test</phase>
@@ -85,7 +85,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
 
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
