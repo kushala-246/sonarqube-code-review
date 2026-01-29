@@ -32,6 +32,7 @@ jobs:
             -Dsonar.organization=kushala-246
             -Dsonar.sources=.
             -Dsonar.java.binaries=target/classes
+            -Dsonar.coverage.jacoco.xmlReportPaths=
       
 
 
