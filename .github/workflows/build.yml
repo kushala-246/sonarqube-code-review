@@ -25,6 +25,14 @@ jobs:
       - name: Build and analyze with SonarCloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn clean verify sonar:sonar
+        run: mvn clean verify sonar:sonar \
+          -Dsonar.projectKey=kushala-246_sonarqube-code-review \
+          -Dsonar.organization=kushala-246 \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+          -Dsonar.pullrequest.key=${{ github.event.pull_request.number }} \
+          -Dsonar.pullrequest.branch=${{ github.head_ref }} \
+          -Dsonar.pullrequest.base=${{ github.base_ref }}
+
 
 
