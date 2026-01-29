@@ -14,7 +14,7 @@ class SonarQubeCodeTest {
     void testMessageConstant() {
         // Check the constant value
         assertEquals("SonarCloud Java test", SonarQubeCode.MESSAGE);
-        logger.info("testMessageConstant passed: MESSAGE = {}", SonarQubeCode.MESSAGE);
+        logger.info("testMessageConstant passed: MESSAGE = {}", SonarQubeCode.MESSAGE)
     }
 
     @Test
