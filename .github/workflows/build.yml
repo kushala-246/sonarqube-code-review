@@ -36,7 +36,7 @@ jobs:
             -Dsonar.java.binaries=target/classes \
             -Dsonar.test.inclusions=src/test/java/**/*.java \
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
-            -Dsonar.exclusions=target/**
+            -Dsonar.exclusions=target/** \
             -Dsonar.coverage.exclusions=**/*Logger*.java
 
 
