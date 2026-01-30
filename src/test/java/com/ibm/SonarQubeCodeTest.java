@@ -16,4 +16,14 @@ class SonarQubeCodeTest {
         // Covers main method
         assertDoesNotThrow(() -> SonarQubeCode.main(new String[]{}));
     }
+
+    @Test
+    void testGetMessage() {
+        assertEquals("SonarCloud Java test", SonarQubeCode.getMessage());
+    }
+
+    @Test
+    void testMainMethod() {
+        assertDoesNotThrow(() -> SonarQubeCode.main(new String[]{}));
+    }
 }
