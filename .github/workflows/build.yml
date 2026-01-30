@@ -25,11 +25,16 @@ jobs:
       - name: Build and analyze with SonarCloud
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run:
+        run: |
           mvn clean verify sonar:sonar \
-          -Dsonar.sources=src/main/java \
-          -Dsonar.tests=src/test/java \
-          -Dsonar.java.binaries=target/classes \
-          -Dsonar.test.inclusions=src/test/java/**/*.java
-
+            -Dsonar.projectKey=kushala-246_sonarqube-code-review \
+            -Dsonar.organization=kushala-246 \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+            -Dsonar.sources=src/main/java \
+            -Dsonar.tests=src/test/java \
+            -Dsonar.java.binaries=target/classes \
+            -Dsonar.test.inclusions=src/test/java/**/*.java \
+            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+            -Dsonar.exclusions=target/**
 
