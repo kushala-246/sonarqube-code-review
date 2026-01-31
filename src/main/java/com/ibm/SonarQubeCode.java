@@ -16,3 +16,4 @@ public class SonarQubeCode {
         logger.info(getMessage());
     }
 }
+
