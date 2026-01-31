@@ -6,24 +6,17 @@ import org.junit.jupiter.api.Test;
 class SonarQubeCodeTest {
 
     @Test
-    void shouldReturnExpectedMessage() {
-        // Explicitly executes executable code
-        assertEquals("SonarCloud Java test", SonarQubeCode.getMessage());
-    }
-
-    @Test
-    void mainShouldRunWithoutException() {
-        // Covers main method
-        assertDoesNotThrow(() -> SonarQubeCode.main(new String[]{}));
-    }
-
-    @Test
     void testGetMessage() {
-        assertEquals("SonarCloud Java test", SonarQubeCode.getMessage());
+        // when
+        String message = SonarQubeCode.getMessage();
+
+        // then
+        assertEquals("SonarCloud Java test", message);
     }
 
     @Test
     void testMainMethod() {
-        assertDoesNotThrow(() -> SonarQubeCode.main(new String[]{}));
+        // This ensures main() is covered
+        SonarQubeCode.main(new String[]{});
     }
 }
