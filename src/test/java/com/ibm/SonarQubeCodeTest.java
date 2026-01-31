@@ -25,4 +25,11 @@ class SonarQubeCodeTest {
 
         verify(mockLogger).info("SonarCloud Java test");
     }
+
+    @Test
+    void mainShouldRunWithoutError() {
+        // optional: replace global logger with mock if you want
+        SonarQubeCode.main(new String[]{});
+    }
+
 }
