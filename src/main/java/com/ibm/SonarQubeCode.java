@@ -9,7 +9,7 @@ public class SonarQubeCode {
 
 
     public static String getMessage() {
-        return MESSAGE;
+        return MESSAGE
     }
 
     public static void main(String[] args) {
