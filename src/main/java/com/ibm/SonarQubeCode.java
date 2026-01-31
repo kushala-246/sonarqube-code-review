@@ -10,7 +10,7 @@ public class SonarQubeCode {
     private final Logger logger;
 
     public SonarQubeCode(Logger logger) {
-        this.logger = logger
+        this.logger = logger;
     }
 
     public String getMessage() {
