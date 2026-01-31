@@ -1,22 +1,20 @@
 package com.ibm;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 class SonarQubeCodeTest {
 
     @Test
-    void testGetMessage() {
-        // when
-        String message = SonarQubeCode.getMessage();
+    void shouldLogMessage() {
+        Logger logger = mock(Logger.class);
+        SonarQubeCode code = new SonarQubeCode(logger);
 
-        // then
-        assertEquals("SonarCloud Java test", message);
-    }
+        code.logMessage();
 
-    @Test
-    void testMainMethod() {
-        // This ensures main() is covered
-        SonarQubeCode.main(new String[]{});
+        verify(logger).info("SonarCloud Java test");
     }
 }

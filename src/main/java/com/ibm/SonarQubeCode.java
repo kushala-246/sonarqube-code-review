@@ -4,15 +4,25 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class SonarQubeCode {
-    private static final Logger logger = LoggerFactory.getLogger(SonarQubeCode.class);
-    public static final String MESSAGE = "SonarCloud Java test";
 
+    static final String MESSAGE = "SonarCloud Java test";
 
-    public static String getMessage() {
+    private final Logger logger;
+
+    public SonarQubeCode(Logger logger) {
+        this.logger = logger;
+    }
+
+    public String getMessage() {
         return MESSAGE;
     }
 
-    public static void main(String[] args) {
+    public void logMessage() {
         logger.info(getMessage());
+    }
+
+    public static void main(String[] args) {
+        new SonarQubeCode(LoggerFactory.getLogger(SonarQubeCode.class))
+                .logMessage();
     }
 }
