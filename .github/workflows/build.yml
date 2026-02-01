@@ -34,7 +34,7 @@ jobs:
             -Dsonar.sources=src/main/java \
             -Dsonar.tests=src/test/java \
             -Dsonar.java.binaries=target/classes \
-            -Dsonar.test.inclusions=src/test/java/**/*.java 
+            -Dsonar.test.inclusions=src/test/java/**/*.java \
             -Dsonar.pullrequest.key=${{ github.event.pull_request.number }} \
             -Dsonar.pullrequest.branch=${{ github.head_ref }} \
             -Dsonar.pullrequest.base=${{ github.base_ref }}
