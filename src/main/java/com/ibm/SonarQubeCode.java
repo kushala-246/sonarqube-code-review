@@ -21,7 +21,7 @@ public class SonarQubeCode {
         logger.info(getMessage());
     }
  public void unusedMethod() {
-    logger.("This method is not covered");
+    logger.info("This method is not covered");
 }
 
     public static void main(String[] args) {
