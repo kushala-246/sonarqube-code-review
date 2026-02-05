@@ -8,6 +8,8 @@ public class SonarQubeCode {
     static final String MESSAGE = "SonarCloud Java test";
 
     private final Logger logger;
+    private final Logger logger;
+    private final Logger logger;
 
     public SonarQubeCode(Logger logger) {
         this.logger = logger;
@@ -15,7 +17,7 @@ public class SonarQubeCode {
 
     public String getMessage() {
         return MESSAGE;
-         return MESSAGE;
+        
     }
 
     public void logMessage() {
