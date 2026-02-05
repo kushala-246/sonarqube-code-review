@@ -15,6 +15,7 @@ public class SonarQubeCode {
 
     public String getMessage() {
         return MESSAGE;
+         return MESSAGE;
     }
 
     public void logMessage() {
