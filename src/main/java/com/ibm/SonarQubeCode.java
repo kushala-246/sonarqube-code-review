@@ -20,6 +20,9 @@ public class SonarQubeCode {
     public void logMessage() {
         logger.info(getMessage());
     }
+    public void unusedMethod() {
+    System.out.println("This method is not covered");
+}
 
     public static void main(String[] args) {
         new SonarQubeCode(LoggerFactory.getLogger(SonarQubeCode.class))
