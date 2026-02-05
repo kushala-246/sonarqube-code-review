@@ -18,7 +18,7 @@ public class SonarQubeCode {
     }
 
     public void logMessage() {
-        logger.info(getMessage());
+        System.out.println(getMessage());
     }
 
     public static void main(String[] args) {
