@@ -21,13 +21,33 @@ public class SonarQubeCode {
 
     public void logMessage() {
        logger.info(getMessage());
-        logger.info(getMessage());
-        logger.info(getMessage());
-        logger.info(getMessage());
-        logger.info(getMessage());
-        logger.info(getMessage());
-        logger.info(getMessage());
     }
+    public void logMessageA() {
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+}
+
+public void logMessageB() {
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+    logger.info(getMessage());
+}
+
 
     public static void main(String[] args) {
         new SonarQubeCode(LoggerFactory.getLogger(SonarQubeCode.class))
