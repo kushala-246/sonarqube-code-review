@@ -17,9 +17,7 @@ public class SonarQubeCode {
         return MESSAGE;
     }
 
-    public void logMessage() {
-        logger.info(getMessage());
-    }
+    
 
     public static void main(String[] args) {
         new SonarQubeCode(LoggerFactory.getLogger(SonarQubeCode.class))
