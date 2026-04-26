@@ -12,6 +12,7 @@ public class SonarQubeCode {
     public SonarQubeCode(Logger logger) {
         this.logger = logger;
     }
+    
 
     public String getMessage() {
         return MESSAGE;
